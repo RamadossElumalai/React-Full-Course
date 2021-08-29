@@ -17,9 +17,15 @@ const App = () => {
       date: new Date(2019, 1, 3),
     },
   ];
+
+  const addExpenseHandler = (newExpense) => {
+    expenses.push(newExpense);
+    console.log(expenses);
+  };
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
